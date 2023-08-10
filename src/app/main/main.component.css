@@ -1,0 +1,99 @@
+nav {
+  font-family: "Borel", cursive;
+  color: #fff;
+  background: rgb(43, 138, 62);
+  background: linear-gradient(
+    90deg,
+    rgb(43, 138, 62) 0%,
+    #24e321 35%,
+    rgba(105, 219, 124, 1) 100%
+  );
+  margin: 0;
+  /* display: flex;
+  align-content: center; */
+  min-height: 30px;
+  font-size: 24px;
+  height: 48px;
+}
+nav h2 {
+  /* margin-top: 8px; */
+  margin: 0;
+  /* margin-left: 8px; */
+  text-align: center;
+}
+.feed {
+  width: 65%;
+  margin: 0;
+  height: 100%;
+  border-right: 1px solid #dee2e6;
+}
+.icons-tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 40px;
+}
+.icons-tab-container {
+  position: relative;
+  max-height: 40px;
+  border-bottom: 1px solid #dee2e6;
+}
+.refresh {
+  right: 0;
+  position: absolute;
+}
+.icons-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  height: max-content;
+}
+.icons {
+  margin: 0;
+  height: max-content;
+}
+
+.write-something-container {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #dee2e6;
+}
+.write-something {
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+.write-something textarea {
+  width: 50%;
+  height: auto;
+  padding: 8px;
+  font-size: 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  resize: none;
+}
+.write-something textarea:focus {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.write-something button {
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+.write-something button:hover {
+  color: #24e321;
+  cursor: pointer;
+}
