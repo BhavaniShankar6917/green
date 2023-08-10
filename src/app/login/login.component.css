@@ -19,6 +19,12 @@
   z-index: 10;
   position: relative;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://firebasestorage.googleapis.com/v0/b/http-57421.appspot.com/o/photos%2Fpexels-matheus-bertelli-4558720.jpg?alt=media&token=0b27f11c-6840-4429-8a44-b505c954941c);
+  background-position: center;
+  background-size: cover;
 }
 
 .blur {
@@ -34,15 +40,15 @@
 }
 .logo {
   z-index: 99;
-  position: absolute;
+  /* position: absolute;
   top: 30%;
-  /* bottom: 50%; */
-  left: 23%;
+  left: 23%; */
 }
 /*LEFT SIDE STYLES END*/
 
 /*RIGHT SIDE STYLES BEGIN*/
-.login-dialog {
+.login-dialog,
+.signup-dialog {
   float: left;
   width: 50%;
   margin-left: 20px;
@@ -54,13 +60,15 @@
   height: 100%;
   width: 100%; */
 }
-.login-container {
+.login-container,
+.signup-container {
   border-radius: 8px;
   padding: 50px;
   width: 70%;
   margin-top: 40px;
 }
-.login-container h3 {
+.login-container h3,
+.signup-container h3 {
   display: inline;
   margin-right: 6px;
   font-size: 24px;
@@ -71,18 +79,22 @@
   color: #24e321;
   font-size: 28px;
 }
-.login-title {
+.login-title,
+.signup-title {
   margin-bottom: 20px;
 }
-.login-title h3 {
+.login-title h3,
+.signup-title h3 {
   height: max-content;
 }
-.signin-instead {
+.signin-instead,
+.login-instead {
   margin: 0;
   font-size: 12px;
   margin-bottom: 20px;
 }
-.signup-form {
+.signup-form,
+.login-form l {
   width: 100%;
 }
 .input {
@@ -120,7 +132,8 @@
 .password-input {
   margin-bottom: 24px;
 }
-.signup-form button {
+.signup-form button,
+.login-form button {
   padding: 10px 30px;
   border: none;
   font-weight: 600;
@@ -130,19 +143,43 @@
   border: 2px solid #24e321;
   margin-bottom: 12px;
 }
-.signup-form button:hover {
+.signup-form button:hover,
+.login-form button:hover {
   background-color: #fff;
   color: #24e321;
   border: 2px solid #24e321;
   cursor: pointer;
 }
-.signin-instead a {
+.signin-instead span,
+.login-instead span {
   color: #24e321;
   text-decoration: none;
   padding: 2px;
 }
-.signin-instead a:hover {
+.signin-instead span:hover,
+.login-instead span:hover {
   color: #fff;
+  cursor: pointer;
   /* font-size: 14px; */
   background-color: #24e321;
+}
+.show-login,
+.show-signup {
+  transition: transform 0.75s 1s;
+  animation: show 0.5s ease-out;
+  /* transform: translateX(50%); */
+}
+
+@keyframes show {
+  0% {
+    /* max-height: 0%; */
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+    max-height: 100%;
+  }
 }
