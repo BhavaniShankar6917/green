@@ -1,10 +1,10 @@
 <section class="login-page">
   <div class="background">
     <div class="blur"></div>
-    <img
+    <!-- <img
       src="https://firebasestorage.googleapis.com/v0/b/http-57421.appspot.com/o/photos%2Fpexels-matheus-bertelli-4558720.jpg?alt=media&token=0b27f11c-6840-4429-8a44-b505c954941c"
       alt=""
-    />
+    /> -->
     <div class="logo">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +31,9 @@
     </div>
   </div>
 
-  <div class="login-dialog">
-    <div class="login-container">
-      <div class="login-title">
+  <div class="signup-dialog" *ngIf="newUser" [class.show-signup]="newUser">
+    <div class="signup-container">
+      <div class="signup-title">
         <h3>Sign up to</h3>
         <h3 id="green">Green</h3>
       </div>
@@ -47,10 +47,11 @@
             <label for="email">Email</label>
             <input
               type="text"
-              id="email"
+              id="signup-email"
               [class.input-invalid]="
                 signup.get('email')?.touched && signup.get('email')?.invalid
               "
+              title="signup-email"
               formControlName="email"
             />
             <div
@@ -64,12 +65,59 @@
           </div>
           <div class="password-input input">
             <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password" />
+            <input
+              type="password"
+              id="signup-password"
+              title="signup-password"
+              formControlName="password"
+            />
           </div>
-          <button>Signup</button>
+          <button type="submit">Signup</button>
         </form>
         <p class="signin-instead">
-          Already have an account? <a href="">Sign in</a> instead
+          Already have an account?
+          <span (click)="newUser = !newUser">Log in</span> instead
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="login-dialog" *ngIf="!newUser" [class.show-login]="!newUser">
+    <div class="login-container">
+      <div class="login-title">
+        <h3>Log in to</h3>
+        <h3 id="green">Green</h3>
+      </div>
+      <div class="login-form">
+        <form
+          [formGroup]="login"
+          class="login"
+          (ngSubmit)="loginWithEmail(emailValue, passwordValue)"
+        >
+          <div class="email-input input">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              [class.input-invalid]="
+                login.get('email')?.touched && login.get('email')?.invalid
+              "
+              formControlName="email"
+            />
+            <div
+              class="invalid"
+              *ngIf="login.get('email')?.touched && login.get('email')?.invalid"
+            >
+              Email is required
+            </div>
+          </div>
+          <div class="password-input input">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <p class="login-instead">
+          New user? <span (click)="newUser = !newUser">Create an account</span>
         </p>
       </div>
     </div>
