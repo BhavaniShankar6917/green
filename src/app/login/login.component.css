@@ -60,6 +60,10 @@
   height: 100%;
   width: 100%; */
 }
+.signup-dialog,
+.login-dialog {
+  height: 100%;
+}
 .login-container,
 .signup-container {
   border-radius: 8px;

@@ -57,7 +57,16 @@ nav h2 {
 .write-something-container {
   width: 100%;
   height: 100%;
+  position: relative;
   border-bottom: 1px solid #dee2e6;
+}
+.close {
+  scale: 0.3;
+}
+.close-write-something {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .write-something {
   padding: 10px;

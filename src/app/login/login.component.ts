@@ -22,9 +22,11 @@ export class LoginComponent {
     password: new FormControl("", Validators.required),
   });
   signupWithEmail(email: string, password: string) {
+    console.log({ email, password });
     this.supabase.registerUser(email, password);
   }
   loginWithEmail(email: string, password: string) {
+    console.log({ email, password });
     this.supabase.signin(email, password);
   }
   get emailValue() {
@@ -32,5 +34,11 @@ export class LoginComponent {
   }
   get passwordValue() {
     return this.signup.get("password")?.value as string;
+  }
+  get loginEmailValue() {
+    return this.login.get("email")?.value as string;
+  }
+  get loginPasswordValue() {
+    return this.login.get("password")?.value as string;
   }
 }

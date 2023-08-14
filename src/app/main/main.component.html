@@ -49,6 +49,18 @@
     </div>
   </div>
   <div class="write-something-container" *ngIf="writeSomethingVisible">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 -960 960 960"
+      width="48"
+      class="close close-write-something"
+      (click)="writeSomethingVisible = false; iconsTabVisible = true"
+    >
+      <path
+        d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+      />
+    </svg>
     <div class="write-something">
       <textarea
         type="text"
@@ -58,4 +70,6 @@
       <button type="button">Post</button>
     </div>
   </div>
+  <button type="button" title="getData" (click)="insertData()">getData</button>
 </section>
+<router-outlet></router-outlet>
